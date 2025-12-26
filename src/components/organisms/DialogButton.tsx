@@ -11,7 +11,6 @@ const DialogUserActionItem = ({
   deleteUser,
   title,
   buttonTitle,
-  ...props
 }: GridActionsCellItemProps & {
   title: string;
   buttonTitle: string;

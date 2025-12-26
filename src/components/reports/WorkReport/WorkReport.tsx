@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const convertData = (data?: Dayjs) => {
+const convertData = (data?: Dayjs | null) => {
+
   return data ? data.date() + "-" + data.month() + "-" + data.year() : "";
 };
 

@@ -59,7 +59,7 @@ const ProjectClientHistoryPage = () => {
     navigate(`/projects/${projectId}/clients/${clientId}/history/add`);
   };
 
-  const convertTimestamp = (timestamp) => {
+  const convertTimestamp = (timestamp: any) => {
     let date = timestamp.toDate();
     let mm = date.getMonth();
     let dd = date.getDate();
@@ -76,7 +76,7 @@ const ProjectClientHistoryPage = () => {
     const unsubscribe = onSnapshot(
       collection(db, `clients/${clientId}/projects/${projectId}/history`),
       (snapshot) => {
-        let data = [];
+        let data: any[] = [];
         snapshot.docs.map((doc) => {
           getUserByUid(doc.data().userId)
             .then((user) => {

@@ -1,6 +1,17 @@
 import { Box, Button, LinearProgress, Typography } from "@mui/material";
+import type { ChangeEvent } from "react";
 
-const MultipleFileInput = ({ onChange, files, progress }) => {
+interface MultipleFileInputProps {
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  files: File[];
+  progress: { [key: string]: number };
+}
+
+const MultipleFileInput = ({
+  onChange,
+  files,
+  progress,
+}: MultipleFileInputProps) => {
   return (
     <>
       <Box mt={2}>

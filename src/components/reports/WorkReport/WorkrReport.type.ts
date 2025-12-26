@@ -6,8 +6,8 @@ export interface WorkReportType {
     mainText?: string,
     summeryText?: string,
     records: RecordType[],
-    startData?: Dayjs,
-    endData?: Dayjs,
+    startData?: Dayjs | null,
+    endData?: Dayjs | null,
 }
 
 export interface RecordType {

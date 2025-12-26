@@ -145,7 +145,7 @@ export const deleteClientHistory = async (
         console.log("Folder contents deleted successfully");
       })
       .catch((error) => {
-        console.log("Folder contents deleted successfully");
+        console.log("Folder contents deleted successfully error:", error);
       });
   });
   await deleteDoc(

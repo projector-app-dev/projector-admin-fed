@@ -4,11 +4,11 @@ import type { ProjectType } from "../../services/common.type";
 
 export const AppContext = createContext<AppContextType>({
   selectedProject: "",
-  setSelectedProject: (id: string) => {},
+  setSelectedProject: (_id: string) => {},
   projects: [],
-  setProjects: (projects: ProjectType[]) => {},
+  setProjects: (_projects: ProjectType[]) => {},
   loading: false,
-  setLoading: (loading: boolean) => {},
+  setLoading: (_loading: boolean) => {},
 });
 
 export const useAppContext = () => {
