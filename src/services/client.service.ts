@@ -298,12 +298,12 @@ export const getStringFromTimestamp = (timestamp: Timestamp): string | null => {
 };
 
 export const convertTimestampIntoDateAndTimeString = (timestamp: Timestamp) => {
-  const date = timestamp.toDate();
-  const mm = date.getMonth();
-  const dd = date.getDate();
-  const yyyy = date.getFullYear();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+    let date = timestamp.toDate();
+    let mm = date.getMonth() < 9 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+    let dd = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    let yyyy = date.getFullYear();
+    const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+    const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
 
   return hours + ":" + minutes + " " + dd + "." + mm + "." + yyyy;
 };

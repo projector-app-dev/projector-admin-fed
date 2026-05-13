@@ -102,8 +102,13 @@ const styles = StyleSheet.create({
 });
 
 const convertData = (data?: Dayjs | null) => {
+  if (!data) {
+    return "";
+  }
+  let mm = data.month() < 9 ? '0' + (data.month() + 1) : data.month() + 1;
+  let dd = data.date() < 10 ? '0' + data.date() : data.date();
 
-  return data ? data.date() + "-" + data.month() + "-" + data.year() : "";
+  return dd + "-" + mm + "-" + data.year();
 };
 
 const WorkReport = (props: WorkReportType) => {
